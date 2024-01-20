@@ -63,4 +63,13 @@ public interface Polynomial {
      * @return {@literal true} if the class invariant holds, and {@literal false} otherwise.
      */
     boolean wellFormed();
+
+    /**
+     * Evaluates the polynomial for the given value of the variable.
+     *
+     * @param x the value at which to evaluate the polynomial.
+     * @return the result of evaluating the polynomial at the given value.
+     */
+    double evaluate(double x);
+
 }

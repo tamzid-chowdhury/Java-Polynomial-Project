@@ -168,4 +168,21 @@ class SparsePolynomialTest {
         assertThrows(IllegalArgumentException.class, () -> sparsePolynomial1.equals(densePolynomial1));
     }
 
+    @Test
+    void testEvaluate() {
+        SparsePolynomial sparsePolynomial1 = new SparsePolynomial("4x^2 + 8x + 2");
+        
+        //Test when x = 2
+        assertEquals(34.0, sparsePolynomial1.evaluate(2.0), 0.0001);
+
+        //Test when x = -1
+        assertEquals(2.0, sparsePolynomial1.evaluate(-1.0), 0.0001);
+
+        //Test when x = 0
+        assertEquals(2.0, sparsePolynomial1.evaluate(0.0), 0.0001);
+
+        // Test when x = 1.5
+        assertEquals(21.5, sparsePolynomial1.evaluate(1.5), 0.0001);
+
+    }
 }

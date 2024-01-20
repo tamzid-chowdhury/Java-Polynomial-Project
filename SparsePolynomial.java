@@ -509,5 +509,22 @@ public class SparsePolynomial implements Polynomial {
     	}
     	return new SparsePolynomial(map);
     }
+
+     /**
+     * Takes in a double x and plugs this in to a polynomial with a single
+     * variable. Evaluates this polynomial and returns the value in double form.
+     * Precondition: takes in a double
+     * Postcondition: returns a double
+     * @return a double
+     * 
+     */
+    @Override
+    public double evaluate(double x) {
+        double result = 0.0;
+        for (int i = 0; i <= degree(); i++) {
+            result += getCoefficient(i) * Math.pow(x, i);
+        }
+        return result;
+    }
     
 }
