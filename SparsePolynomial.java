@@ -509,5 +509,14 @@ public class SparsePolynomial implements Polynomial {
     	}
     	return new SparsePolynomial(map);
     }
+
+    @Override
+    public double evaluate(double x) {
+        double result = 0.0;
+        for (int i = 0; i <= degree(); i++) {
+            result += getCoefficient(i) * Math.pow(x, i);
+        }
+        return result;
+    }
     
 }
